@@ -1,26 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
-    <title>Advanced Image Viewer</title>
-</head>
-<body>
-    <!-- SUBSCRIBE ==> https://www.youtube.com/channel/UCzWS-AiirxpTDq_AGSg9Fhg -->
-    <!-- Join Facebook Group ==> https://www.facebook.com/groups/html.css.javascript.albtechhh -->
-
-    <!-- SUBSCRIBE ==> https://www.youtube.com/channel/UCzWS-AiirxpTDq_AGSg9Fhg -->
-    <!-- Join Facebook Group ==> https://www.facebook.com/groups/html.css.javascript.albtechhh -->
-    <div class="container">
-        <img src="map.png">
-    </div>
-    <!-- SUBSCRIBE ==> https://www.youtube.com/channel/UCzWS-AiirxpTDq_AGSg9Fhg -->
-    <!-- Join Facebook Group ==> https://www.facebook.com/groups/html.css.javascript.albtechhh -->
-    
-    <!-- SUBSCRIBE ==> https://www.youtube.com/channel/UCzWS-AiirxpTDq_AGSg9Fhg -->
-    <!-- Join Facebook Group ==> https://www.facebook.com/groups/html.css.javascript.albtechhh -->
-</body>
-</html>
+<script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script>
+<div class="frame1">
+<div style="position: absolute;top:0px;left:0px;" id="frame">
+<div>
+<div class="pointer" style="" id="pointer"></div>
+<img src="https://github.com/bababoy-mc/bababoy-mc.github.io/blob/main/map.png?raw=true" class="frame" id="zoom">
+</div>
+</div>
+</div>
+<script>
+const ORIGIN_X = 2560;
+const ORIGIN_Y = 2048;
+const inst = panzoom(document.querySelector('#frame'));
+function display(x, y) {
+	const el = document.querySelector('#pointer');
+  const x1 = x;
+  const y1 = y;
+  el.style.transform = `translate(${x1 + ORIGIN_X}px, ${y1 + ORIGIN_Y}px)`
+  el.style.display = 'block';
+}
+const x = new Number(prompt('X koordinatı'))
+const y = new Number(prompt('Z koordinatı'))
+display(x,y)
+/*const x = new Number(prompt('X koordinatı'))
+const y = new Number(prompt('Z koordinatı'))
+inst.zoomTo((x + ORIGIN_X),y + ORIGIN_Y, 2)*/
+</script>
+<style>
+.frame {
+  padding: none;
+  width: 2816px;
+  height: 2048px;
+  margin: none;
+  image-rendering: pixelated;
+}
+.frame1 {
+  width: 50%;
+  height: 50%;
+}
+.pointer {
+  width: 15vh;
+  height: 26vh;
+  z-index: 200;
+  position: absolute;
+  display: none;
+  top: 0px;
+  left: 0px;
+  margin-left: -7.5vh;
+  margin-top: -26vh;
+  background-image: url("https://github.com/bababoy-mc/bababoy-mc.github.io/blob/main/Google_Maps_pin.svg.png?raw=true");
+  background-size: cover;
+}
+</style>
