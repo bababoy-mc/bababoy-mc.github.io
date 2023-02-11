@@ -19,7 +19,9 @@ function display(x, y) {
   el.style.transform = `translate(${x1 + ORIGIN_X}px, ${y1 + ORIGIN_Y}px)`
   el.style.display = 'block';
 	inst.zoom(4);
-	document.querySelector('.pointer').scrollIntoView();
+	setTimeout(function() {
+		document.querySelector('.pointer').scrollIntoView();
+	}, 100);
 }
 const x = new Number(prompt('X koordinatı'))
 const y = new Number(prompt('Z koordinatı'))
