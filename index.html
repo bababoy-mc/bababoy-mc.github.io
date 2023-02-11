@@ -12,11 +12,12 @@ const ORIGIN_X = 2560;
 const ORIGIN_Y = 2048;
 const inst = Panzoom(document.querySelector('#frame'));
 function display(x, y) {
-	const el = document.querySelector('#pointer');
+  const el = document.querySelector('#pointer');
   const x1 = x;
   const y1 = y;
   el.style.transform = `translate(${x1 + ORIGIN_X}px, ${y1 + ORIGIN_Y}px)`
   el.style.display = 'block';
+	document.querySelector('.pointer').scrollIntoView()
 }
 const x = new Number(prompt('X koordinatı'))
 const y = new Number(prompt('Z koordinatı'))
@@ -41,15 +42,15 @@ inst.zoomTo((x + ORIGIN_X),y + ORIGIN_Y, 2)*/
   height: 50%;
 }
 .pointer {
-  width: 15vh;
-  height: 26vh;
+  width: 5vh;
+  height: 8vh;
   z-index: 200;
   position: absolute;
   display: none;
   top: 0px;
   left: 0px;
-  margin-left: -7.5vh;
-  margin-top: -26vh;
+  margin-left: -2.5vh;
+  margin-top: -8vh;
   background-image: url("https://github.com/bababoy-mc/bababoy-mc.github.io/blob/main/Google_Maps_pin.svg.png?raw=true");
   background-size: cover;
 }
