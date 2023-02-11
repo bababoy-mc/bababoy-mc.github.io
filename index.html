@@ -11,6 +11,7 @@
 const ORIGIN_X = 2560;
 const ORIGIN_Y = 2048;
 const inst = Panzoom(document.querySelector('#frame'));
+document.querySelector('.frame1').addEventListener('wheel', inst.zoomWithWheel) 
 function display(x, y) {
   const el = document.querySelector('#pointer');
   const x1 = x;
